@@ -1,12 +1,14 @@
+import MisExcepciones.ColorInvalidoDeFichaRTE;
 
 public abstract class Ficha {
 
-	boolean color;
-	final String letra;
+	private boolean color;
+	private String letra;
 	
-	public Ficha(boolean colorF, String letraF) {
-		this.color = colorF;
-		this.letra = letraF;
+	public Ficha(String colorF) {
+		this.setColor(colorF);
+		//Definición forzosa por culpa de un error
+		this.letra = "  ";
 	}
 	
 	public String getColor() {
@@ -17,8 +19,20 @@ public abstract class Ficha {
 		return this.letra;
 	}
 	
-	public void setColor(boolean nuevoC) {
-		this.color = nuevoC;
+	public void setColor(String nuevoC) {
+		if(nuevoC == "NEGRO") {
+			this.color = true;
+		}else {
+			if(nuevoC == "BLANCO") {
+				this.color = false;
+			}else {
+				throw new ColorInvalidoDeFichaRTE("Se está intentado meter un color no válido a las fichas");
+			}
+		}
+	}
+	
+	protected void setLetra(String nuevaL) {
+		this.letra = nuevaL;
 	}
 
 	private String colorToString () {
@@ -36,5 +50,8 @@ public abstract class Ficha {
 	}
 
 	abstract public boolean puedeMoverAqui(Tablero tablero, Posicion posicion);
-
+	
+	public String toString() {
+		return this.mostrarFicha();
+	}
 }

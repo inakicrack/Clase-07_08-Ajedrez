@@ -1,12 +1,11 @@
 
 public class Casilla {
 
+	static final String SIMBOLO_DE_CASILLA_VACIA = "__";
 	private Ficha ficha;
 
-	public 
-
-	public Casilla(Ficha ficha) {
-		this.setFicha(null) = ficha;
+	public Casilla() {
+		this.setFicha(null);
 	}
 
 	public void asignarFichaACasilla (Ficha ficha) {
@@ -41,9 +40,12 @@ public class Casilla {
 	public void setFicha (Ficha nuevaF) {
 		this.ficha = nuevaF;
 	}
-	public String toString() ?? //Debes poder detectar si esta vacia para mostrar la letra de casilla vacia o la letra de la ficha
-	
-}
-
+	public String toString() {
+		if(this.estaVacia()) {
+			return SIMBOLO_DE_CASILLA_VACIA;
+		}else {
+			return ficha.toString(); 
+		}
+	}
 }
 
