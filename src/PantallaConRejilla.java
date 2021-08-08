@@ -169,7 +169,7 @@ public class PantallaConRejilla {
 		//El new solo lo hago de una dimension, pq el inicio lo hago clonando lineas de simbolos
 		// que son las tres largas de arriba.
 		this.rejilla  = new char[PantallaConRejilla.TAMANIO_REJILLA_VERTICAL][];  //[PantallaConRejilla.TAMANIO_REJILLA];
-		this.iniciarPantalla();
+		this.reiniciarPantalla();
 
 	}
 	
@@ -178,7 +178,7 @@ public class PantallaConRejilla {
 	//********************************************************************************************************************
 	
 	//El metodo clone y el toString apestan hacen cosas raras.
-	private void iniciarPantalla () {
+	public void reiniciarPantalla () {
 		boolean cuadrado_blanco_primero = true;
 		char[] linea_relleno_casilla;
 		for (int i= 0; i < PantallaConRejilla.CANTIDAD_CASILLAS_FIJADO; i++) {
@@ -285,7 +285,7 @@ public class PantallaConRejilla {
 	
 	//------------------------------------------------------------------------------------------------
 	
-
+	/*
 	public void borrarCasilla (Posicion pos_casilla) {
 		char simbolo_de_borrado = PantallaConRejilla.SIMBOLO_RELLENO_BLANCO;
 		if (!this.esCasillaBlanca(pos_casilla)) {
@@ -296,8 +296,10 @@ public class PantallaConRejilla {
 		
 		this.rellenarRejillaCentralCasilla(pos_en_rejilla, simbolo_de_borrado);
 	}
+	*/
 	
 	public void borrarRejilla () {
+		/*
 		Posicion casilla_actual = new Posicion (0,0);
 		for (int x = 0; x < PantallaConRejilla.CANTIDAD_CASILLAS_FIJADO; x++) {
 			for (int y = 0; y < PantallaConRejilla.CANTIDAD_CASILLAS_FIJADO; y++) {
@@ -306,6 +308,8 @@ public class PantallaConRejilla {
 				this.borrarCasilla(casilla_actual);
 			}
 		}
+		*/
+		this.reiniciarPantalla();
 	}
 	
 	//----------------------------------------------------------------------------------------------

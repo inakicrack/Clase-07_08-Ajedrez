@@ -42,6 +42,11 @@ public class TableroDePantallaConRejilla extends Tablero {
 	
 	
 	public String toString() {
+		//TODO: La Rejilla solo se debe actualizar cuando se muestra el tyablero
+		//No es nedesario tenerla actualizada...
+		//Su ciclo es: SE borra, se consulta la matriz de Casillas actuyalizando la rejilla y LUEGO se muestra.
+		this.pantalla.reiniciarPantalla();
+		this.actualizarPantalla();
 		return this.pantalla.toString();
 	}
 }
