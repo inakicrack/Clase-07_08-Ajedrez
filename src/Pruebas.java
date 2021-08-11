@@ -2,7 +2,7 @@
 public class Pruebas {
 
 	public static void main(String[] args) {
-		Tablero tab1 = new Tablero(8);
+		TableroDePantallaConRejilla tab1 = new TableroDePantallaConRejilla();
 		System.out.println(tab1);
 		
 		Ficha peonBlanco01 = (Ficha) new Peon("BLANCO");

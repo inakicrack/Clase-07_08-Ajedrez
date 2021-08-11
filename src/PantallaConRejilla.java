@@ -7,7 +7,7 @@ public class PantallaConRejilla {
 	
 	final static char SIMBOLO_RELLENO_BLANCO = ' ';
 	//Para que funcione en la consola hay que ir a opciones del fichero y poner la codificacion en UTF8 para ESTE fichero
-	final static char SIMBOLO_RELLENO_NEGRO = '█';  //'@';
+	final static char SIMBOLO_RELLENO_NEGRO = '@';
 	
 	final static char SEPARADOR_HORIZONTAL = '-';
 	final static char SEPARADOR_VERTICAL = '|';
@@ -28,8 +28,8 @@ public class PantallaConRejilla {
 	
 	//**************************************************************************************************************************
 	// LINEAS DE PINTADO DE TABLERO:
-	// Son solo tres. Suficientes para "rellenar" el tablero básico.
-	// Úsalas con .clone() !! O el cambio de una linea, será el cambio en todas, pues serían referencias a la misma linea
+	// Son solo tres. Suficientes para "rellenar" el tablero bÃ¡sico.
+	// Ãšsalas con .clone() !! O el cambio de una linea, serÃ¡ el cambio en todas, pues serÃ­an referencias a la misma linea
 	// sin .clone()
 	//***************************************************************************************************************************
 			
@@ -185,13 +185,13 @@ public class PantallaConRejilla {
 			
 			int pos_inicio_fila = i * (PantallaConRejilla.LINEAS_X_CASILLA_FIJADO + 1);
 			
-			// Más uno por el separador horizontral
+			// MÃ¡s uno por el separador horizontral
 			this.rejilla[pos_inicio_fila] = clonarListaChars(PantallaConRejilla.LINEA_SEPARADOR_HORIZONTAL);
 			
 			if (cuadrado_blanco_primero == true) {
-				linea_relleno_casilla =  PantallaConRejilla.LINEA_RELLENO_HORIZONTAL_1; //Aquí no hace falta clonar con clonarListaChars
+				linea_relleno_casilla =  PantallaConRejilla.LINEA_RELLENO_HORIZONTAL_1; //AquÃ­ no hace falta clonar con clonarListaChars
 			} else {
-				linea_relleno_casilla =  PantallaConRejilla.LINEA_RELLENO_HORIZONTAL_2; //Aquí no hace falta clonar con clonarListaChars
+				linea_relleno_casilla =  PantallaConRejilla.LINEA_RELLENO_HORIZONTAL_2; //AquÃ­ no hace falta clonar con clonarListaChars
 			}
 			//Pq se clona esa referencia (linea_relleno_casilla) en este for:
 			for (int j = 1;  j < PantallaConRejilla.LINEAS_X_CASILLA_FIJADO + 1; j++) {
@@ -203,7 +203,7 @@ public class PantallaConRejilla {
 		this.rejilla[PantallaConRejilla.TAMANIO_REJILLA_VERTICAL - 1] = clonarListaChars(PantallaConRejilla.LINEA_SEPARADOR_HORIZONTAL);
 	}
 	
-	//Este método hace falta para clonar las lineas que son constantes estaticas.. pq sino, se copian las referencias en vez de los arrays
+	//Este mÃ©todo hace falta para clonar las lineas que son constantes estaticas.. pq sino, se copian las referencias en vez de los arrays
 	//Y te sucede que la linea se repite varias veces... y los cambios se reflejan en varias lineas tambien..pq las referecnias apuntan a la misma instancia
 	private char[] clonarListaChars (char[] lista_vieja) {
 		int tamanio = lista_vieja.length;
@@ -253,7 +253,7 @@ public class PantallaConRejilla {
 	}
 
 	//************************************
-	// Métodos de dibujo: 
+	// MÃ©todos de dibujo: 
 	// - dibujarCasilla
 	// - borrarCasilla
 	//************************************
