@@ -7,13 +7,13 @@ public class TableroDePantallaConRejilla extends Tablero {
 		super(PantallaConRejilla.CANTIDAD_CASILLAS_FIJADO);
 		pantalla = new PantallaConRejilla();
 	}
-	
+	/*
 	//Version temporal que no comrpueba si pones dos piuezas en el mismo sitio:
 	public void colocarPieza(Ficha pieza, Posicion pos_casilla) {
 		this.matrizDeCasillas[pos_casilla.getX()][pos_casilla.getY()].asignarFichaACasilla(pieza);
 		this.actualizarPantalla();
 	}
-	
+	*/
 	private void actualizarPantalla() {
 		this.pantalla.borrarRejilla();
 		
@@ -29,7 +29,7 @@ public class TableroDePantallaConRejilla extends Tablero {
 		}
 		
 	}
-	
+	/*
 	public void eliminarPieza(Posicion pos_casilla) {
 		if ( ! ( (Casilla) this.matrizDeCasillas[pos_casilla.getX()][pos_casilla.getY()]).estaVacia() ) {
 			( (Casilla) this.matrizDeCasillas[pos_casilla.getX()][pos_casilla.getY()]).borrarFichaDeCasilla();
@@ -38,7 +38,7 @@ public class TableroDePantallaConRejilla extends Tablero {
 			System.out.println("Estas intentando eliminiar una pieza en una casilla que está vacía ARRACLAN !!");;
 		}
 
-	}
+	}*/
 	
 	
 	public String toString() {
