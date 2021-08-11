@@ -3,16 +3,21 @@ import MisExcepciones.YaHayPiezaRTE;
 
 public class Tablero{
 
-	final int casillas;
+	private int casillas;
 	Casilla [][] matrizDeCasillas;
 	
 	public Tablero (int casillas) {
 		this.casillas = casillas;
-		this.matrizDeCasillas = new Casilla [this.casillas] [this.casillas];
-		this.asignarMemoriaACadaCasilla();
-		this.vaciarTablero();		
+		this.redimensionarTablero(casillas);		
 	}
 
+	public void redimensionarTablero(int nuevaCantCasillas) {
+		casillas = nuevaCantCasillas;
+		this.matrizDeCasillas = new Casilla [this.casillas] [this.casillas];
+		this.asignarMemoriaACadaCasilla();
+		this.vaciarTablero();
+	}
+	
 	private void asignarMemoriaACadaCasilla () {	
 		for (int i = 0; i < this.casillas; i++) {
 			for (int j = 0; j < this.casillas; j++) {
@@ -84,4 +89,5 @@ public class Tablero{
 	public String toString() {
 		return this.mostrarTablero();
 	}
+	
 }

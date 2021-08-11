@@ -2,7 +2,7 @@
 public class Pruebas {
 
 	public static void main(String[] args) {
-		TableroDePantallaConRejilla tab1 = new TableroDePantallaConRejilla();
+		TableroFicherible tab1 = new TableroFicherible();
 		System.out.println(tab1);
 		
 		Ficha peonBlanco01 = (Ficha) new Peon("BLANCO");
@@ -12,13 +12,13 @@ public class Pruebas {
 		Posicion pos02 = new Posicion (3,5);
 		
 		Ficha reinaBlanca01 = (Ficha) new Reina("BLANCO");
-		Posicion pos03 = new Posicion (7,7);
+		Posicion pos03 = new Posicion (1,1);
 		
 		Ficha reyNegro01 = (Ficha) new Rey("NEGRO");
-		Posicion pos04 = new Posicion (6,1);
+		Posicion pos04 = new Posicion (4,1);
 		
 		Ficha alfilBlanco01 = (Ficha) new Alfil("BLANCO");
-		Posicion pos05 = new Posicion (9,9);
+		Posicion pos05 = new Posicion (3,3);
 		
 		tab1.colocarPieza(peonBlanco01, pos01);
 		tab1.colocarPieza(caballoNegro01, pos02);
