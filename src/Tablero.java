@@ -1,5 +1,7 @@
+import MisExcepciones.FueraDeTableroRTE;
+import MisExcepciones.YaHayPiezaRTE;
 
-public class Tablero {
+public class Tablero{
 
 	final int casillas;
 	Casilla [][] matrizDeCasillas;
@@ -42,6 +44,41 @@ public class Tablero {
 			cadena += "\n";
 		}
 		return cadena;
+	}
+	
+	public boolean posicionIlegal(Posicion posI) {
+		if( (this.casillas-1 < posI.getX()) || (this.casillas-1 < posI.getY()) ) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public void colocarPieza(Ficha fichaC, Posicion posCasilla){
+		if(posicionIlegal(posCasilla)) {
+			throw new FueraDeTableroRTE("No existe esta posición en el tablero.");
+		}else {
+			(this.matrizDeCasillas[posCasilla.getX()][posCasilla.getY()]).asignarFichaACasilla(fichaC);
+		}
+	}
+
+	public void colocarPieza(Ficha fichaC, Posicion posCasilla, boolean chequearPiezaPrevia) {
+		if(chequearPiezaPrevia == true){
+			if(this.matrizDeCasillas[posCasilla.getX()][posCasilla.getY()].tieneFicha()) {
+				throw new YaHayPiezaRTE("Ya hay una pieza en la posicion");
+		    }
+		}
+		this.colocarPieza(fichaC, posCasilla);
+	}
+	
+	public void eliminarPieza(Posicion posCasilla) {
+		if(posicionIlegal(posCasilla)) {
+			throw new FueraDeTableroRTE("No existe esta posición en el tablero.");
+		}else {
+			if(this.matrizDeCasillas[posCasilla.getX()][posCasilla.getY()].tieneFicha()) {
+				this.matrizDeCasillas[posCasilla.getX()][posCasilla.getY()].borrarFichaDeCasilla();
+			}
+		}
 	}
 	
 	public String toString() {
