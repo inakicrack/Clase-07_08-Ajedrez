@@ -30,6 +30,25 @@ public class TableroFicherible extends Tablero{
 				System.exit(0);
 		}
 		this.redimensionarTablero(casillas);
+		
+		String [] segundaLinea;
+		try {
+			fichero = new FileReader("inicial.txt");
+			BufferedReader buffer = new BufferedReader(fichero);
+			segundaLinea.split() = buffer.readLine();
+			if(segundaLinea == null) {
+				buffer.close();
+				throw new FormatoDeFicheroIncorrectoRTE("El fichero está vacío");
+			}else {
+				ficha = Integer.parseInt(segundaLinea);
+			}
+			buffer.close();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.exit(0);
+		}
+		this.colocarPieza();
 
 	}
 }
